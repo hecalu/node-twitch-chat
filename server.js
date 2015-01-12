@@ -89,4 +89,4 @@ io.sockets.on('connection', function (socket) {
 });
 
 // Set server port
-server.listen(8080);
+server.listen(process.env.PORT || 8080);
