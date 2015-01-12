@@ -1,10 +1,12 @@
 {
   "name": "node-twitch-chat",
+  "description": "Twitch chat lookalike through NodeJS application.",
+  "author": "Lucas Bourdallé <hecalu@gmail.com>",
   "version": "0.1.0",
   "dependencies": {
     "ent": "^2.0.0",
-    "socket.io": "~1.2.1"
+    "socket.io": "~1.2.1",
+    "socket.io-handshake": "0.0.10"
   },
-  "author": "Lucas Bourdallé",
-  "description": "Twitch chat lookalike through NodeJS application."
+  "engine": "node >= 0.10.35"
 }
