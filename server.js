@@ -41,7 +41,7 @@ io.sockets.on('connection', function (socket) {
             // Store given pseudo
         	socket.pseudo = pseudo;
             pseudos.push(pseudo);
-            // Inform client
+            // Informs client
         	socket.emit('setPseudo', pseudo);
             // Informs all attendees of new connection
             io.emit('message', {
