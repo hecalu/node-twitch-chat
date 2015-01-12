@@ -84,11 +84,11 @@
 		    </div>
 	    </div>
 
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script>
             // Init server connection throught Web socket.
-            var socket = io.connect('http://localhost:8080');
+            var socket = io.connect(location.origin);
 
             // Availables Twitch emotes for the chat
             var twitchEmotes = null;
