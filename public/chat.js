@@ -177,4 +177,11 @@ $(document).ready(function () {
             $('.message .time').addClass('hide'); 
         }
     });  
+
+    // Options popover
+    $('a.options').on('click', function(){
+        $('.options-popover').toggle();
+    });
+    $('.options-popover').hide();
+
 });
