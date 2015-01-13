@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NodeJS Twitch chat</title>
+	    <!-- Bootstrap -->
+	    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./styles.css" rel="stylesheet">
+    </head>
+ 
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="room col-xs-12">
+		        	<div class="messages col-xs-12"></div>
+		        	<div class="choose-pseudo col-xs-12">
+		        		<form>
+                            <div class="form-group">
+    		        			<input type="text" class="user-pseudo form-control" placeholder="Choose your pseudo" autofocus/>
+                                <label class="control-label"></label>
+                            </div>
+		        		</form>
+		        	</div>
+			        <div class="post">
+			        	<form class="user-post">
+				        	<input class="user-message form-control" placeholder="What are you thinking ?"/>
+                            
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="showPostTime"> Afficher l'heure
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+		        </div>
+		    </div>
+	    </div>
+
+        <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./chat.js"></script>
+    </body>
+</html>

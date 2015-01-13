@@ -1,22 +1,22 @@
-// Load HTTP & FileSystem modules.
-var http    = require('http');
-var fs      = require('fs');
+// Init server
+var express = require('express');
+var app     = express();
+var server  = require('http').Server(app);
+server.listen(process.env.PORT || 8080);
+
+// Serve static files from public dir
+app.use(express.static(__dirname + '/public'));
+
+// Routing: Serve index.html on '/' root path 
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 // Load Ent module to encode/decode HTML message.
 var ent     = require('ent');
 
-// Loads index HTML file and sends it to client
-var server = http.createServer(function(req, res) {
-    fs.readFile('./index.html', 'utf-8', function(error, content) {
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.end(content);
-    });
-});
-
-
-// Load and init Socket module
-var io = require('socket.io').listen(server);
-var handshake = require('socket.io-handshake');
+// Load & Init socket module
+var io      = require('socket.io')(server);
 
 // Contains all connected pseudos
 var pseudos = [];
@@ -46,7 +46,8 @@ io.sockets.on('connection', function (socket) {
             // Informs all attendees of new connection
             io.emit('message', {
                 author: 'system',
-                content: pseudo+' est maintenant connecté(e)'
+                content: pseudo+' est maintenant connecté(e)',
+                time: new Date()
             });
             // Informs all attendee of the updated nicknames list
             io.emit('refreshPseudos', pseudos);
@@ -82,7 +83,8 @@ io.sockets.on('connection', function (socket) {
             // Informs attendees about user logout.
         	socket.broadcast.emit('message', {
                 author: 'system',
-                content: socket.pseudo+' est déconnecté(e)'
+                content: socket.pseudo+' est déconnecté(e)',
+                time: new Date()
             });
         }
     });
