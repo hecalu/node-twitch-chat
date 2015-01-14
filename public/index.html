@@ -13,23 +13,24 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="room col-xs-12">
+                <div class="room col-xs-offset-3 col-xs-4">
 		        	<div class="messages col-xs-12"></div>
 		        	<div class="choose-pseudo col-xs-12">
 		        		<form>
-                            <div class="form-group">
+                            <div class="form-group col-xs-8 col-xs-offset-2">
     		        			<input type="text" class="user-pseudo form-control" placeholder="Choose your pseudo" autofocus/>
                                 <label class="control-label"></label>
                             </div>
 		        		</form>
 		        	</div>
 			        <div class="post col-xs-12">
+                        <hr>
 			        	<form class="user-post">
-				        	<input class="user-message form-control" placeholder="What are you thinking ?"/>
+				        	<textarea class="user-message form-control" placeholder="What are you thinking ?"></textarea>
                             
                             <a class="options" href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
 
-                            <div class="options-popover col-xs-3">
+                            <div class="options-popover col-xs-6">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" class="showPostTime"> Afficher l'heure

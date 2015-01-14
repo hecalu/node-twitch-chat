@@ -1,12 +1,23 @@
+hr {
+    border-top: 1px solid #c0c0c0;   
+}
 .room {
 	border: 1px solid #c0c0c0;
 	background: #f2f2f2;
+    position: absolute;
+    padding: 10px 0;
 }
-.room input {
+.room .glyphicon {
+    color: #6441a5;
+}
+.room .glyphicon:hover {
+    color: #000;
+}
+.room input, .room textarea {
     border: 1px solid #c0c0c0;
     border-radius: 0;
 }
-.room input:focus {
+.room input:focus, .room textarea:focus {
     border: 1px solid rgba(100, 65, 165, 0.75);
     -webkit-box-shadow: 0 0 3px 1px rgba(185, 155, 235, 0.75);
 }
@@ -33,13 +44,15 @@
     position: relative;
 	height: 20%;
 }
+.user-message {
+    margin-bottom: 10px;   
+}
 .choose-pseudo {
-    position: fixed;
+    position: absolute;
     z-index: 10;
     top: 0;
     left: 0;
 	height: 100%;
-    width: 100%;
 	background: rgba(0,0,0,.7);
     transform-style: preserve-3d;
 }

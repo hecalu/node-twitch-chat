@@ -146,7 +146,18 @@ $(document).ready(function () {
         }, "slow");
 
     });
-
+    
+    /**
+     * When user hits the Enter key in the textarea post, submit the form.
+     * @param  {Event} event
+     */
+    $('.user-message').keydown(function(event) {
+        if (event.keyCode == 13) { // On 'Enter' key pressed
+            $('form.user-post').submit()
+            return false;
+        }
+    });
+    
     /**
      * When user posts a new message
      * @param  {Event}
