@@ -141,7 +141,7 @@ $(document).ready(function () {
     	newMessage.appendTo($('.messages'));
 
         // Scroll room window to bottom
-        $(".messages").animate({ 
+        $(".messages-wrapper").stop().animate({ 
             scrollTop: $(".messages").height() 
         }, "slow");
 
