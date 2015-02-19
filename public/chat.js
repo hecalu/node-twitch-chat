@@ -140,6 +140,12 @@ $(document).ready(function () {
         newMessage.append(timeText, authorText, contentText);
     	newMessage.appendTo($('.messages'));
 
+        // Remove 100 oldest messages
+        var messageCount = $('.message').length;
+        if(messageCount > 100) {
+            $('.message:lt('+(messageCount - 100)+')').remove();
+        }
+
         // Scroll room window to bottom
         $(".messages-wrapper").stop().animate({ 
             scrollTop: $(".messages").height() 
