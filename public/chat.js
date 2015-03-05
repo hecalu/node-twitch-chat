@@ -9,6 +9,9 @@ $(document).ready(function () {
     // Store all user's nickname of current room. Real-time updated.
     var pseudos = [];
 
+    // Current user's pseudo
+    var myPseudo = null;
+
     // Retrieves all availables twitch emotes from dedicated WebService.
     $.getJSON('//twitchemotes.com/api_cache/v2/global.json')
         .done(function(json){
@@ -200,5 +203,13 @@ $(document).ready(function () {
         $('.options-popover').toggle();
     });
     $('.options-popover').hide();
+
+    // Display confirm box when closing
+    
+    $(window).on('beforeunload', function(){
+        if(myPseudo != null) {
+            return "Press OK to continue, or Cancel to stay on the current page.";
+        }
+    });
 
 });
