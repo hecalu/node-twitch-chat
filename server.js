@@ -2,7 +2,6 @@
 var express = require('express');
 var app     = express();
 var server  = require('http').Server(app);
-server.listen(process.env.PORT || 8080);
 
 // Serve static files from public dir
 app.use(express.static(__dirname + '/public'));
@@ -91,4 +90,6 @@ io.sockets.on('connection', function (socket) {
 });
 
 // Set server port
-server.listen(process.env.PORT || 8080);
+var serverPort = process.env.PORT || 8080;
+server.listen(serverPort);
+console.log("Chat running on :" + serverPort+" port");
